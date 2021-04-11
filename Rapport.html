@@ -1,0 +1,124 @@
+
+<!-- saved from url=(0068)file:///C:/Users/bachw/Documents/GitHub/Devoir1_IFT3911/Rapport.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rapport DM1</title>
+    <style type="text/css">
+        table
+        {
+            border: outset 2px black;
+            border-collapse: collapse;
+        }
+        th
+        {
+            border-bottom: double 2px black;
+        }
+        td
+        {
+            border-bottom: solid 1px black;
+        }
+        .first_col
+        {
+            border-right: double 2px black;
+        }
+    </style>
+</head>
+
+<body style="text-align: center;">
+    <h1 style="text-align: center; margin-bottom: 100px;">
+        IFT 3911 - DM1</h1>
+    <h2>
+        Information générale</h2>
+    <p>
+        <span style="font-weight: bold;">Nom: </span>Siddharth Baichoo
+        <br>
+        <span style="font-weight: bold;">Matricule: </span>20130259
+        <br>
+        <span style="font-weight: bold;">Courriel: </span>siddharth.baichoo@umontreal.ca
+        <br>
+        <span style="font-weight: bold;">temps mis: </span>? heures
+    </p>
+    <p>
+        <span style="font-weight: bold;">Nom: </span>Hamza Bellakhdim
+        <br>
+        <span style="font-weight: bold;">Matricule: </span>20004834
+        <br>
+        <span style="font-weight: bold;">Courriel: </span>hamza.bellakhdim@umontreal.ca
+        <br>
+        <span style="font-weight: bold;">temps mis: </span>? heures
+    </p>
+    <p style="margin-bottom: 100px;">
+        <span style="font-weight: bold;">Nom: </span>William Bach
+        <br>
+        <span style="font-weight: bold;">Matricule: </span>20127144
+        <br>
+        <span style="font-weight: bold;">Courriel: </span>william.bach@umontreal.ca
+        <br>
+        <span style="font-weight: bold;">temps mis: </span>? heures
+    </p>
+    
+    
+    <h2>
+        Tâche 3 - Design</h2>
+    <p>
+        Voici notre solution pour la tâche 3 (révision du diagramme de classes et diagrammes de séquence système et identification des modules réutilisables).
+    </p>
+    <ul style="text-align: left;">
+        <li>Voici un <a href="https://facebook.com">lien</a> vers les fichiers (repo GitHub mis en public).</li>
+        <li>Images affichées directement.</li>
+    </ul>
+    <img src="Design/1diagClasse.png" alt="Image 1" width="1400px"> </img>
+    <img src="Design/2diagClasse.png" alt="Image 2" width="1400px" style="margin-bottom: 100px;"> </img>
+
+    <h2>Identification des modules réutilisables</h2>
+    <p>
+        Nous savons que le degré de réutilisation d'une classe peut être estimé grâce à la distance de cette même classe au domaine de fondation :
+    </p>
+    <img src="Design/Domaine de classes_Réutilisation.png" alt="Illustration de la réutilisation" width="300px"></img>
+
+    <p> Or, le fardeau est une métrique mesurant la distance d'une classe au domaine de fondation. Plus le fardeau est élevé, plus la classe est éloignée du domaine de fondation.
+        Si l'on s'intéresse au calcul du fardeau, on remarque qu'il s'agit de la cardinalité de l'ensemble contenant toutes les classes auxquelles notre classe réfère (par association, héritage ..).
+        Nous pouvons donc en déduire que moins une classe a de références extérieures, plus elle est susceptible d'être réutilisée. Si l'on applique ce principe à notre diagramme, les classes
+        les plus susceptibles d'être réutilisées sont :</p>
+    <ul>
+        <li>L'interface 'Gestionnaire' qui ne référence aucune classe et qui est très générale.</li>
+        <li>L'ensemble des classes abstraites (Compagnie, Voyage, .. y compris Client) qui sont en bas de "l'échelle des références" de notre diagramme.</li>
+    </ul>
+    <p>Les autres classes du diagramme sont soit des classes spécifiques qui ne pourraient pas être réutilisées, soit des classes manipulant les classes abstraites. 
+        Bien que les classes abstraites du diagramme ne fassent pas partie du domaine de fondation car elles ne sont pas utiles à toutes les industries, elles peuvent 
+        facilement être réutilisées dans une industrie spécifique.
+    </p>
+    
+    
+    <h2>
+        Révision des contraintes OCL</h2>
+    
+    <p style="margin-bottom: 100px;"> Voici un <a href="Contraintes_OCL.txt">lien</a> vers un fichier texte pour lire les contraintes OCL.</p> 
+
+
+
+
+    <p style="font-weight: bold;"> Justifications du diagramme de classe</p>
+    <ul style="margin-bottom: 100px;">
+        <li><p>La plupart du diagramme de classe utilise la généralisation (héritage) car on peut 
+            clairement voir dans la définition des exigences (énoncé) que chaque moyen de transport
+            différent (avion, train, bateau) est relié par les mêmes propriétés (compagnie propriétaire,
+            infrastructure de départ et d'arrivée, concept de siège, etc..).
+            De plus, tous les gestionnaires utilisent les mêmes fonctionnalités, c'est-à-dire ajouter,
+            modifier et supprimer, ce qui justifie l'emploi d'une interface générale 'Main_gestionnaire'.</p></li>
+        <li><p>Nous avons utilisé une classe descriptive 'DescriptionVoyage' afin de décrire l'objet
+            Voyage, car cela augmente la cohésion de la classe Voyage qui ne garde en attribut que ses
+            propriétés primaires. 
+            Cela améliore la maintenance de par le fait qu'un ajout de caractéristique d'un voyage dans
+            le futur pourra être fait plus facilement avec une classe entièrement dédiée à la description
+            d'un voyage.</p></li>
+        <li><p>Une classe Section a la responsabilité partielle de connaître le montant du plein tarif
+            à bord d'un voyage. C'est ensuite cette même classe et ses enfants (grâce à la 
+            généralisation) qui s'occupent de calculer le prix pour chaque section.</p></li>
+        <li><p>Notre structure utilise le modèle 'Vue-Contrôleur' afin de pouvoir optimiser le coupage
+            de l'architecture. ll y a 2 contrôleurs : celui du niveau administrateur qui s'occupe 
+            d'envoyer les requêtes aux différents gestionnaires et celui du niveau client qui gère
+            majoritairement les réservations de siège et les infos client.</p></li>
+    </ul>
+
+
+</body></html>

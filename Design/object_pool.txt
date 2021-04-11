@@ -1,0 +1,8 @@
+La conception actuelle ne favorise pas la reutilisation des objets car on aura forcement un grand nombre de Moyen de Transport au cours du temps et la memoire risque de saturer rapidement .
+En analysant le comportement des objets associes, la plupart des instances auront une partie commune et il ne faudra pas forcement toujours retourner l'objet donc le choix du patron Object Pool semble
+bien adapter a la situation.
+ Pour qu'un client puisse reserver un vol il faudrait deja que ce vol existe et donc que son moyen de transport soit repertorie.
+On utilise alors un objet MoyenTransport qui va etre reutiliser pour le prochain voyage ainsi de suite et donc le gestionnaire des moyen de transport pourrait utiliser cette classe pour acquerir de nouvelles instances.
+ En reutilisant un objet MoyenTransport, on va reutiliser tous les section et siege associe a l'objet ce qui favorise une meilleure performance en terme de ressources:
+ la methode acquireReusable dans ObjectPool devrait reset certain element de l'objet comme la disponibilite des sieges par exemple.
+L'implementation actuelle n'est certes pas optimale mais elle se prete bien a la conception actuelle. 

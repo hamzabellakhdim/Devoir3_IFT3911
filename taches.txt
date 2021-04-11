@@ -1,0 +1,24 @@
+ Tâches
+
+    Produisez le design du système de réservation en y incluant les patrons de conception mentionnés ci-haut.
+
+    Présentez un diagramme de classe logiciel et un diagramme de séquence ou de collaboration par patron de conception. Identifiez-les clairement dans le rapport et précisez quelle variante du patron vous avez utilisée, si c'est le cas.
+    Votre design doit également inclure deux patrons de conception distincts en plus de ceux requis. 
+
+    Identifiez-les clairement dans le rapport et précisez quelle variante du patron vous avez utilisée, si c'est le cas. N'inclure que les diagrammes de classe.
+    Produisez un diagramme de paquets qui illustre ce design. Notez qu'il n'est pas nécessairement bon d'avoir un paquet par patron.
+
+    Discutez comment la qualité de votre conception a été améliorée par rapport au design du devoir 2. Cette tâche reste libre, mais soyez le plus rigoureux et complet dans votre argumentation. Vous pouvez vous appuyer sur les principes et techniques d'évaluation de conception.
+    
+    Implémentez le système en Java. Vous devez générer le code à partir du design logiciel, puis compléter le code dans les méthodes à la main. Assurez-vous que le design et le code sont cohérents entre eux.
+    Si vous le souhaitez, vous pouvez faire une rétro-ingénierie (reverse-engineering) dans Visual Paradigm pour que le code et les diagrammes soient synchronisés. Lors de l'exécution, le système comprendra au moins trois vols, trois trajets et trois itinéraires par défaut.
+    Cette "base de données" peut être simplement codée en dur (string dans le code ou fichiers). Un vrai système de base de données serait hors du cadre du devoir.
+    Si le code ne compile pas, vous aurez 0 à cette tâche. Incluez un fichier readme.txt qui explique comment utiliser votre application.
+    Il n'est pas requis d'avoir une interface graphique.
+
+Bonus: Implémentez le système en Java avec une interface utilisateur graphique (GUI).
+ La fenêtre principale comporte deux boutons qui ouvrent chacun une nouvelle fenêtre à chaque fois qu'on clique dessus. Un bouton ouvre une fenêtre pour le GUI de l'administrateur et l'autre ouvre une fenêtre pour le GUI du client.
+ On peut donc avoir plusieurs fenêtres d'administration et client ouvertes en même temps, mais elles n'ont pas de dépendance directe entre elles.
+ Grâce au patron de l'observateur, chaque changement effectué par une des fenêtres sera reflétée dans toutes les autres fenêtres ouvertes. 
+ Par exemple, si l'administrateur ajoute un nouveau vol, il s'affichera en temps réel sur la fenêtre du client qui affichait les vols disponibles si l'aéroport d'origine et la date de départ concordent. 
+ À l'inverse, si un client réserve une cabine, l'administrateur verra le nombre de cabines réservées pour cet itinéraire augmenter. 
