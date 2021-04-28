@@ -17,7 +17,7 @@ public class CompagnieGestion implements Gestionnaire {
 		throw new UnsupportedOperationException();
 	}
 
-	public void notify() {
+	public void notify_() {
 		// TODO - implement CompagnieGestion.notify
 		throw new UnsupportedOperationException();
 	}

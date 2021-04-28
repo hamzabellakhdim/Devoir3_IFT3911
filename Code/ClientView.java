@@ -6,7 +6,7 @@ public class ClientView {
 		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'r' pour payer ou modifier une réservation.");
 		System.out.println("Tapez 'v' pour chercher un voyage.");
-		System.out.println("Tapez 'c' pour accéder à votre profil client ou créer un profil");
+		System.out.println("Tapez 'c' pour accéder à votre profil client ou créer un profil.\n\n");
 
 		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
     	String response = myObj.nextLine();
@@ -37,21 +37,27 @@ public class ClientView {
 		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'a' pour ajouter un client.");
 		System.out.println("Tapez 'm' pour modifier votre profil client.");
-		System.out.println("Tapez 's' pour supprimer votre profil client.");
+		System.out.println("Tapez 's' pour supprimer votre profil client.\n\n");
 
 		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
     	String response = myObj.nextLine();
 
 		switch(response) {
 			case "a" : 
-				System.out.println("Veuillez entrer votre adresse.");
+				System.out.println("\n\nVeuillez entrer votre adresse.");
 				String adresse = myObj.nextLine();
-				System.out.println("Veuillez entrer votre email.");
+				System.out.println("\nVeuillez entrer votre email.");
 				String courriel = myObj.nextLine();
-				System.out.println("Veuillez entrer votre numéro de téléphone");
+				System.out.println("\nVeuillez entrer votre numéro de téléphone.");
 				String tel = myObj.nextLine();
+				System.out.println("\nVeuillez entrer votre date de naissance.");
+				String date_naissance = myObj.nextLine();
+				System.out.println("\nVeuillez entrer votre numéro de passeport (vos données seront revendues à Facebook).");
+				String num_passeport = myObj.nextLine();
+				System.out.println("Veuillez entrer la date d'expiration de votre passeport (vos données seront revendues à Twitter).");
+				String exp_passeport = myObj.nextLine();
 
-				controller.ajouterClient(adresse, courriel, tel);
+				controller.ajouterClient(adresse, courriel, tel, date_naissance, num_passeport, exp_passeport);
 				break;
 
 			case "m" :
