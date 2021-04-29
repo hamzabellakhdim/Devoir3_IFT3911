@@ -1,5 +1,7 @@
 import java.util.Random;
+import jdk.vm.ci.code.CodeUtil;
 import java.util.ArrayList; // import the ArrayList class
+import java.util.Scanner;
 
 
 public class ClientGestion implements Gestionnaire {
@@ -28,16 +30,64 @@ public class ClientGestion implements Gestionnaire {
 	}
 
 	public void supprimer(String id) {
-		for (Client c : this.clients) {
+		boolean exists = false;
+
+		for (int i = 0 ; i < this.clients.size(); i++) {
+			Client c = this.clients.get(i);
 			if (c.getId().equals(id)) {
-				System.out.println("Client numéro " + id + "supprimé.");
+				System.out.println("Client numéro " + id + " supprimé.");
 				this.clients.remove(c);
+				exists = true;
+				break;
 			}
 		}
-		System.out.println("Aucun client avec cet ID.")
+		if (!(exists)) {
+			System.out.println("Aucun client avec cet ID.");
+		}
 	}
 
 	public void modifier(String id) {
+		Client client;
+		boolean exists = false;
+
+		for (int i = 0 ; i < this.clients.size(); i++) {
+			Client c = this.clients.get(i);
+			if (c.getId().equals(id)) {
+				exists = true;
+				client = c;
+				System.out.println("\n\nTapez 'a' pour modifier votre adresse.");
+				System.out.println("Tapez 'c' pour modifier votre courriel.");
+				System.out.println("Tapez 't' pour modifier votre numero de telephone.");
+				
+				Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+				String response = myObj.nextLine();
+
+				switch (response) {
+					case "a" :
+						System.out.println("\n\nTapez votre nouvelle adresse.");
+						String newAdresse = myObj.nextLine();
+						client.setAdresse(newAdresse);
+						break;
+
+					case "c" :
+						System.out.println("\n\nTapez votre nouveau courriel");
+						String newCourriel = myObj.nextLine();
+						client.setCourriel(newCourriel);
+						break;
+
+					case "t" :
+						System.out.println("\n\nTapez votre nouveau numero.");
+						String tel = myObj.nextLine();
+						client.setTelephone(tel);
+						break;
+				}
+
+				System.out.println("\n\nInformations modifiées.");
+			}
+		}
+		if (!(exists)) {
+			System.out.println("Aucun client avec cet ID.");
+		}
 	}
 
 	public void notify_() {

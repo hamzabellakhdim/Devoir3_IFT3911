@@ -28,4 +28,16 @@ public class Client {
 		return this.idClient;
 	}
 
+	public void setAdresse (String newAdresse) {
+		this.adresse = newAdresse;
+	}
+
+	public void setCourriel (String newCourriel) {
+		this.courriel = newCourriel;
+	}
+
+	public void setTelephone (String newTel) {
+		this.telephone = newTel;
+	}
+
 }

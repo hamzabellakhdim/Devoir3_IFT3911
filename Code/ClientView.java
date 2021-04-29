@@ -1,9 +1,14 @@
 import java.util.Scanner;
 
 public class ClientView {
+	CRUD_Client controller;
+
+	public ClientView() {
+		this.controller = new CRUD_Client();
+	}
 
 	public void afficherOptions() {
-		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+		System.out.println("\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'r' pour payer ou modifier une réservation.");
 		System.out.println("Tapez 'v' pour chercher un voyage.");
 		System.out.println("Tapez 'c' pour accéder à votre profil client ou créer un profil.\n\n");
@@ -32,9 +37,8 @@ public class ClientView {
 	}
 
 	public void handleClients() {
-		CRUD_Client controller = new CRUD_Client();
 
-		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+		System.out.println("\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'a' pour ajouter un client.");
 		System.out.println("Tapez 'm' pour modifier votre profil client.");
 		System.out.println("Tapez 's' pour supprimer votre profil client.\n\n");
@@ -61,14 +65,14 @@ public class ClientView {
 				break;
 
 			case "m" :
-				System.out.println("Veuillez entrer votre identifiant client.");
+				System.out.println("\n\nVeuillez entrer votre identifiant client.");
 				String id = myObj.nextLine();
 
 				controller.modifierClient(id);
 				break;
 
 			case "s" :
-				System.out.println("Veuillez entrer votre identifiant client.");
+				System.out.println("\n\nVeuillez entrer votre identifiant client.");
 				String id2 = myObj.nextLine();
 
 				controller.supprimerClient(id2);
@@ -78,6 +82,8 @@ public class ClientView {
 				System.out.println("Veuillez taper soit 'r', soit 'v', soit 'c'.");
 				break;
 		}
+
+		afficherOptions();
 	}
 
 	public void handleReservations() {
@@ -85,7 +91,7 @@ public class ClientView {
 	}
 
 	public void handleVoyages() {
-
+		System.out.println("\n\n=======================================================================================\n\n");
 	}
 
 }
