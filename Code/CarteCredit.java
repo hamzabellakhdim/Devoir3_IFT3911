@@ -1,8 +1,10 @@
+import java.util.Date;
+
 public class CarteCredit {
 
-	private string idCC;
+	private String idCC;
 	private long numeroCarte;
-	private string nomDetenteur;
+	private String nomDetenteur;
 	private int codeSecret;
 	private Date dateExpiration;
 

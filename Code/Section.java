@@ -1,7 +1,7 @@
 public abstract class Section {
 
-	protected string idSection;
-	protected string nom;
+	protected String idSection;
+	protected String nom;
 	protected double prix;
 	protected int nbSection;
 

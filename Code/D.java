@@ -1,6 +1,5 @@
 public class D extends S_Paquebot {
 
-	private ClasseP classeSection = ClasseP.D;
-	private float prixMult = 1.0;
+	private float prixMult = (float)1.0;
 
 }

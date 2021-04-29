@@ -1,10 +1,10 @@
 public abstract interface Gestionnaire {
 
-	Objet ajouter();
+	Object ajouter();
 
-	Objet modifier();
+	Object modifier();
 
-	Objet supprimer();
+	Object supprimer();
 
 	void notify();
 

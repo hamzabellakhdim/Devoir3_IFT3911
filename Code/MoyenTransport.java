@@ -1,7 +1,7 @@
 public abstract class MoyenTransport {
 
-	protected string idMoyenTransport;
-	protected string type;
+	protected String idMoyenTransport;
+	protected String type;
 	protected int nb_sections;
 
 	public Section[] getSection() {
@@ -15,7 +15,7 @@ public abstract class MoyenTransport {
 	 * @param debut
 	 * @param fin
 	 */
-	public Section creerSection(ClasseSection classe, int debut, int fin) {
+	public Section creerSection(Section classe, int debut, int fin) {
 		// TODO - implement MoyenTransport.creerSection
 		throw new UnsupportedOperationException();
 	}
@@ -26,7 +26,7 @@ public abstract class MoyenTransport {
 	 * @param debut
 	 * @param fin
 	 */
-	public void supprimerSection(ClasseSection classe, int debut, int fin) {
+	public void supprimerSection(Section classe, int debut, int fin) {
 		// TODO - implement MoyenTransport.supprimerSection
 		throw new UnsupportedOperationException();
 	}
@@ -37,7 +37,7 @@ public abstract class MoyenTransport {
 	 * @param debut
 	 * @param fin
 	 */
-	public Section modifierSection(ClasseSection classe, int debut, int fin) {
+	public Section modifierSection(Section classe, int debut, int fin) {
 		// TODO - implement MoyenTransport.modifierSection
 		throw new UnsupportedOperationException();
 	}

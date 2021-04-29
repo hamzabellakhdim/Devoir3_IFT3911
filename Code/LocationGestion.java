@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class LocationGestion implements Gestionnaire {
 
 	private LocationsSingleton ls;
@@ -34,6 +36,18 @@ public class LocationGestion implements Gestionnaire {
 	public void filterByDestination(Location villeD) {
 		// TODO - implement LocationGestion.filterByDestination
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void attach(int ModifBase) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void detach(int ModifBase) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,6 +1,5 @@
 public class EconomiePremium extends S_Avion {
 
-	private ClasseA classeSection = ClasseA.F;
-	private float prixMult = 0.5;
+	private float prixMult = (float)0.5;
 
 }

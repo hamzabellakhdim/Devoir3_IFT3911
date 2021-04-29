@@ -1,11 +1,13 @@
+import java.util.Date;
+
 public class Client {
 
-	private string idClient;
-	private string adresse;
-	private string courriel;
-	private string telephone;
-	private string dateNaissance;
-	private string numeroPasseport;
-	private Date expirationPasseport;
+	private String idClient;
+	private String adresse;
+	private String courriel;
+	private String telephone;
+	private String dateNaissance;
+	private String numeroPasseport;
+	private String expirationPasseport;
 
 }

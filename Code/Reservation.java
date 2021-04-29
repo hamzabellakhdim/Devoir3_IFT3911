@@ -1,9 +1,11 @@
+import java.util.Date;
+
 public abstract class Reservation {
 
-	protected string idReservation;
+	protected String idReservation;
 	protected Date dateDepart;
 	protected Date dateRetour;
-	protected string idClient;
+	protected String idClient;
 	protected boolean isConfirmed;
 
 	public boolean estconfirmee() {
