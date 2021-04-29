@@ -10,3 +10,4 @@ ce n'est plus possible de revenir dans le menu principal (Main_View) sans fermer
 effectués.
 
 Le code utilise beaucoup de "switch() case" car c'est un prototype moyenne fidélité qu'on ne prévoit pas d'agrandir dans le futur.
+
