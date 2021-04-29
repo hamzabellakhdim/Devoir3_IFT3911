@@ -80,8 +80,13 @@ public class ClientGestion implements Gestionnaire {
 						String tel = myObj.nextLine();
 						client.setTelephone(tel);
 						break;
+
+					default :
+						System.out.println("Veuillez entrer un caractère valide.");
+						break;
 				}
 
+				myObj.close();
 				System.out.println("\n\nInformations modifiées.");
 			}
 		}
