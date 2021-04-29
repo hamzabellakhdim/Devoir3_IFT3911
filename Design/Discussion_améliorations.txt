@@ -1,0 +1,6 @@
+La dimension la plus importante apportée par l'introduction des patrons de conception est la réutilisabilité.
+En effet, par définition, les patrons sont des stratégies de conception applicables dans de multiples scénarios.
+Ce sont donc des classes générales qui pourront servir dans un projet ultérieur.
+
+PATRON DE FABRIQUE :
+Ce patron gère l'instanciation des objets importants et assure une meilleure cohésion de nos classes car la responsabilité de création est déléguée.
