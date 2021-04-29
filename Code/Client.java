@@ -1,3 +1,5 @@
+
+
 public class Client {
 
 	private String idClient;
@@ -20,6 +22,10 @@ public class Client {
 		System.out.println("\n\n\n\nClient ajouté à la base de données !");
 		System.out.println("L'ID du nouveau client est : " + this.idClient);
 		System.out.println("Veuillez bien conserver cet ID.");
+	}
+
+	public String getId() {
+		return this.idClient;
 	}
 
 }

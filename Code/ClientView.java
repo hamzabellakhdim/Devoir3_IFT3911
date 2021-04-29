@@ -1,16 +1,21 @@
 import java.util.Scanner;
 
 public class ClientView {
+	CRUD_Client controllerClient;
+	ControllerRecherche controllerRecherche;
+
+	public ClientView() {
+		this.controllerClient = new CRUD_Client();
+		this.controllerRecherche = new ControllerRecherche();
+	}
 
 	public void afficherOptions() {
-		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+		System.out.println("\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'r' pour payer ou modifier une réservation.");
 		System.out.println("Tapez 'v' pour chercher un voyage.");
 		System.out.println("Tapez 'c' pour accéder à votre profil client ou créer un profil.\n\n");
-
-		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-    	String response = myObj.nextLine();
-
+		Scanner myObj2 = new Scanner(System.in);
+		String response = myObj2.nextLine();
 		switch(response) {
 			case "c" : 
 				handleClients();
@@ -28,13 +33,13 @@ public class ClientView {
 				System.out.println("Veuillez taper soit 'r', soit 'v', soit 'c'.");
 				break;
 		}
+		myObj2.close();
 		
 	}
 
 	public void handleClients() {
-		CRUD_Client controller = new CRUD_Client();
 
-		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+		System.out.println("\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'a' pour ajouter un client.");
 		System.out.println("Tapez 'm' pour modifier votre profil client.");
 		System.out.println("Tapez 's' pour supprimer votre profil client.\n\n");
@@ -57,27 +62,30 @@ public class ClientView {
 				System.out.println("Veuillez entrer la date d'expiration de votre passeport (vos données seront revendues à Twitter).");
 				String exp_passeport = myObj.nextLine();
 
-				controller.ajouterClient(adresse, courriel, tel, date_naissance, num_passeport, exp_passeport);
+				controllerClient.ajouterClient(adresse, courriel, tel, date_naissance, num_passeport, exp_passeport);
 				break;
 
 			case "m" :
-				System.out.println("Veuillez entrer votre identifiant client.");
+				System.out.println("\n\nVeuillez entrer votre identifiant client.");
 				String id = myObj.nextLine();
 
-				controller.modifierClient(id);
+				controllerClient.modifierClient(id);
 				break;
 
 			case "s" :
-				System.out.println("Veuillez entrer votre identifiant client.");
+				System.out.println("\n\nVeuillez entrer votre identifiant client.");
 				String id2 = myObj.nextLine();
 
-				controller.supprimerClient(id2);
+				controllerClient.supprimerClient(id2);
 				break;
 			
 			default :
 				System.out.println("Veuillez taper soit 'r', soit 'v', soit 'c'.");
 				break;
 		}
+
+		myObj.close();
+		afficherOptions();
 	}
 
 	public void handleReservations() {
@@ -85,7 +93,12 @@ public class ClientView {
 	}
 
 	public void handleVoyages() {
+		System.out.println("\n\n=======================================================================================\n\n");
+		System.out.println("Nous n'avons présentement que des voyages partant de Montréal.");
 
+		controllerRecherche.chercherVoyage("Montreal", "any", "2021-04-29");
+
+		afficherOptions();
 	}
 
 }

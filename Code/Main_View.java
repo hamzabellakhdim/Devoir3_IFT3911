@@ -5,10 +5,9 @@ public class Main_View {
 	/**
 	 * 
 	 * @param args
-	 * 
 	 */
 	public static void main(String[] args) {
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n================================================================================================================");
+		System.out.println("\n================================================================================================================");
 		System.out.println("\n\nBienvenue dans le meilleur logiciel de réservation du cours IFT3911 !\n");
 
 		System.out.println("Tapez 'c' si vous êtes un client.");
@@ -16,7 +15,7 @@ public class Main_View {
 		System.out.println("\n\n(non on a pas utilisé de switch case o_O)\n\n");
 
 		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-    	String response = myObj.nextLine();
+		String response = myObj.nextLine();
 
 		switch(response) {
 			case "c" : 
@@ -37,7 +36,6 @@ public class Main_View {
 				System.out.println("Veuillez taper soit 'a' soit 'c'.");
 				break;
 		}
-
 	}
 
 }

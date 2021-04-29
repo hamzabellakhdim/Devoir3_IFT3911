@@ -8,9 +8,9 @@ public class VoyageCommande implements AdminCommande {
 	public boolean execute() {
 		// TODO Auto-generated method stub
 		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
-		System.out.println("Tapez 'a' pour ajouter une location.");
-		System.out.println("Tapez 'e' pour modifier une location.");
-		System.out.println("Tapez 'd' pour supprimer une location.");
+		System.out.println("Tapez 'a' pour ajouter un voyage.");
+		System.out.println("Tapez 'e' pour modifier un voyage.");
+		System.out.println("Tapez 'd' pour supprimer un voyage.");
 		System.out.println("Tapez 'r' pour rollback.");
 		
 		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
@@ -34,14 +34,19 @@ public class VoyageCommande implements AdminCommande {
 				System.out.println("Tapez 't' pour ajouter un voyage en train.");
 				System.out.println("Tapez 'i' pour ajouter un itinéraire	.");
 				System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+				
 				typeLocation = myObj2.nextLine();
 				System.out.println("\nVeuillez rentrer l'id du siege du voyage.\n");
+				
 				idSiege = myObj2.nextLine();
 				System.out.println("\nVeuillez rentrer l'id de la section du voyage.\n");
+				
 				idSection = myObj2.nextLine();
 				System.out.println("\nVeuillez rentrer l'id du moyen de transport.\n");
+				
 				idmoyenTrans = myObj2.nextLine();
 				System.out.println("\nVeuillez rentrer l'id du voyage.\n");
+				
 				id = myObj2.nextLine();
 				System.out.println("\nVeuillez rentrer le lieu de départ du voyage\n.");
 				lieuDep = myObj2.nextLine();
@@ -50,20 +55,20 @@ public class VoyageCommande implements AdminCommande {
 				System.out.println("\nVeuillez rentrer l'état du voyage.\n");
 				etat = myObj2.nextBoolean();
 				System.out.println("\nVeuillez rentrer la durée du voyage.\n");
-				duree = myObj2.nextInt()
+				duree = myObj2.nextInt();
 				System.out.println("\nVeuillez rentrer le prix du voyage.\n");
 				prix = myObj2.nextDouble();
 				System.out.println("\nVeuillez rentrer la date de départ du voyage.\n");
-				dep = myObj.nextLong();
+				dep = myObj2.nextLong();
 				System.out.println("\nVeuillez rentrer le date d'arrivée du voyage.\n");
-				arr = myObj.nextLong();
+				arr = myObj2.nextLong();
 				switch(typeLocation){
 					case "v":
 						voy = new Vol(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr);
 						edit(voy);
 					    break;
 					case "t":
-						voy = new V_en_train(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr)
+						voy = new V_en_train(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr);
 						edit(voy);
 						break;
 
@@ -76,6 +81,7 @@ public class VoyageCommande implements AdminCommande {
 						System.out.println("Veuillez taper soit 'a', soit 'f', soit 'n'.");
 
 				}	
+				myObj2.close();
 				
 				break;
 
@@ -102,20 +108,20 @@ public class VoyageCommande implements AdminCommande {
 				System.out.println("\nVeuillez rentrer l'état du voyage.\n");
 				etat = myObj2.nextBoolean();
 				System.out.println("\nVeuillez rentrer la durée du voyage.\n");
-				duree = myObj2.nextInt()
+				duree = myObj2.nextInt();
 				System.out.println("\nVeuillez rentrer le prix du voyage.\n");
 				prix = myObj2.nextDouble();
 				System.out.println("\nVeuillez rentrer la date de départ du voyage.\n");
-				dep = myObj.nextLong();
+				dep = myObj2.nextLong();
 				System.out.println("\nVeuillez rentrer le date d'arrivée du voyage.\n");
-				arr = myObj.nextLong();
+				arr = myObj2.nextLong();
 				switch(typeLocation){
 					case "v":
 						voy = new Vol(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr);
 						delete(voy);
 						break;
 					case "t":
-						voy = new V_en_train(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr)
+						voy = new V_en_train(idSiege, idSection, idmoyenTrans, etat, id, duree, prix, lieuDep, lieuArr, dep, arr);
 						delete(voy);
 						break;
 
@@ -128,6 +134,7 @@ public class VoyageCommande implements AdminCommande {
 						System.out.println("Veuillez taper soit 'a', soit 'f', soit 'n'.");
 
 				}	
+				myObj2.close();
 				break;
 
 			case "r":
@@ -137,12 +144,13 @@ public class VoyageCommande implements AdminCommande {
 				System.out.println("Veuillez taper soit 'r', soit 'v', soit 'c'.");
 				break;
 		}
+		myObj.close();
 		return false;
 	}
 
 	public Voyage add() {
 		// TODO - implement VoyageCommande.add
-		throw new UnsupportedOperationException();
+		return cv.ajouterVoyage();
 	}
 
 	/**
@@ -150,8 +158,7 @@ public class VoyageCommande implements AdminCommande {
 	 * @param Voyage
 	 */
 	public void edit(Voyage v) {
-		// TODO - implement VoyageCommande.edit
-		throw new UnsupportedOperationException();
+		cv.modifierVoyage(v);
 	}
 
 	/**
@@ -159,8 +166,7 @@ public class VoyageCommande implements AdminCommande {
 	 * @param Voyage
 	 */
 	public void delete(Voyage v) {
-		// TODO - implement VoyageCommande.delete
-		throw new UnsupportedOperationException();
+		cv.supprimerVoyage(v);
 	}
 
 

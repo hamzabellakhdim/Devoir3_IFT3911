@@ -9,10 +9,10 @@ public class ControllerCompagnie extends AdminController {
 	public Compagnie ajouterCompagnie() {
 		Compagnie com = null;
 		Scanner myObj2 = new Scanner(System.in);  // Create a Scanner object
-		System.out.println("\n\n\n\n\n\n\n\n=======================================================================================\n\n");
+		System.out.println("\n\n=======================================================================================\n\n");
 		System.out.println("Tapez 'a' pour modifier une compagnie aerienne.");
 		System.out.println("Tapez 'f' pour modifier une compagnie ferroviaire.");
-		System.out.println("Tapez 'n' pour modifier une compagnie navale.");
+		System.out.println("Tapez 'n' pour modifier une compagnie navale.\n\n");
 		String typeCompany = myObj2.nextLine();
 		System.out.println("Veuillez rentrer l'id de la compagnie.");
 		String id = myObj2.nextLine();
@@ -35,6 +35,7 @@ public class ControllerCompagnie extends AdminController {
 
 		}
 		System.out.println("Compagnie ajoutée");
+		myObj2.close();
 		return com;
 	}
 

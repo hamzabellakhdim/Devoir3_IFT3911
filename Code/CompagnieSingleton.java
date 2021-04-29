@@ -1,8 +1,8 @@
 public class CompagnieSingleton {
 
-	private CompagnieAerienneFactory aerialFactory;
-	private CompagnieNavaleFactory navalFactory;
-	private CompagnieFerroviaireFactory trainCFactory;
+	private CompagnieAerienneFactory aerialFactory = new CompagnieAerienneFactory();
+	private CompagnieNavaleFactory navalFactory = new CompagnieNavaleFactory();
+	private CompagnieFerroviaireFactory trainCFactory = new CompagnieFerroviaireFactory();
 	private Object key;
 
 	public void Controller() {
