@@ -1,9 +1,9 @@
 public class CRUD_Client extends ClientController {
 
-	public void ajouterClient(String adresse, String courriel, String tel) {
+	public void ajouterClient(String adresse, String courriel, String tel, String dateNaissance, String numPasseport, String expPasseport) {
 		ClientGestion gestionnaire = new ClientGestion();
 
-		gestionnaire.ajouter(adresse, courriel, tel);
+		gestionnaire.ajouter(adresse, courriel, tel, dateNaissance, numPasseport, expPasseport);
 	}
 
 	public void supprimerClient(String id) {

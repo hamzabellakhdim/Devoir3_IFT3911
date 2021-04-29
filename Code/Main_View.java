@@ -5,6 +5,7 @@ public class Main_View {
 	/**
 	 * 
 	 * @param args
+	 * 
 	 */
 	public static void main(String[] args) {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n================================================================================================================");
@@ -27,7 +28,7 @@ public class Main_View {
 				System.out.println("Veuillez entrer le mot de passe.");
 				response = myObj.nextLine();
 				System.out.println("\n\n\n\nDu premier coup !\n\n");
-				
+
 				AdminView admin = new AdminView();
 				admin.afficherCRUD();
 				break;

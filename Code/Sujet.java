@@ -4,14 +4,14 @@ public interface Sujet {
 	 * 
 	 * @param ModifBase
 	 */
-	void attach(int ModifBase);
+	public void attach(ModifBase m);
 
 	/**
 	 * 
 	 * @param ModifBase
 	 */
-	void detach(int ModifBase);
+	public void detach(ModifBase m);
 
-	void notify();
+	public void notify_();
 
 }

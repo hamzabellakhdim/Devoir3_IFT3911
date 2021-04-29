@@ -6,7 +6,7 @@ public abstract interface Gestionnaire {
 
 	Object supprimer();
 
-	void notify();
+	void notify_();
 
 	/**
 	 * 
